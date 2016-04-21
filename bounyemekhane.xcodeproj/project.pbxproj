@@ -7,23 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D02F1A91CC8090500D81824 /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F1A11CC8090500D81824 /* Montserrat-Black.otf */; };
+		8D02F1AA1CC8090500D81824 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F1A21CC8090500D81824 /* Montserrat-Bold.otf */; };
+		8D02F1AB1CC8090500D81824 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F1A31CC8090500D81824 /* Montserrat-ExtraBold.otf */; };
+		8D02F1AC1CC8090500D81824 /* Montserrat-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F1A41CC8090500D81824 /* Montserrat-Hairline.otf */; };
+		8D02F1AD1CC8090500D81824 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F1A51CC8090500D81824 /* Montserrat-Light.otf */; };
+		8D02F1AE1CC8090500D81824 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F1A61CC8090500D81824 /* Montserrat-Regular.otf */; };
+		8D02F1AF1CC8090500D81824 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F1A71CC8090500D81824 /* Montserrat-SemiBold.otf */; };
+		8D02F1B01CC8090500D81824 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F1A81CC8090500D81824 /* Montserrat-UltraLight.otf */; };
+		8D02F1B31CC8403800D81824 /* FoodDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D02F1B21CC8403700D81824 /* FoodDetailsViewController.swift */; };
 		8D41D3E41CB7DC6D007996C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41D3E31CB7DC6D007996C7 /* AppDelegate.swift */; };
-		8D41D3E61CB7DC6D007996C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41D3E51CB7DC6D007996C7 /* ViewController.swift */; };
 		8D41D3E91CB7DC6D007996C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D41D3E71CB7DC6D007996C7 /* Main.storyboard */; };
-		8D41D3EC1CB7DC6D007996C7 /* bounyemekhane.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D41D3EA1CB7DC6D007996C7 /* bounyemekhane.xcdatamodeld */; };
 		8D41D3EE1CB7DC6D007996C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D41D3ED1CB7DC6D007996C7 /* Assets.xcassets */; };
 		8D41D3F11CB7DC6D007996C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D41D3EF1CB7DC6D007996C7 /* LaunchScreen.storyboard */; };
+		8DDAFE8A1CC5668100197E94 /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAFE891CC5668100197E94 /* CardTableViewController.swift */; };
+		8DDAFE8C1CC568BA00197E94 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAFE8B1CC568BA00197E94 /* CardTableViewCell.swift */; };
+		8DDAFE8E1CC58E4B00197E94 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAFE8D1CC58E4B00197E94 /* Meal.swift */; };
+		8DDC6FF41CC69E78005B1C24 /* TableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC6FF31CC69E78005B1C24 /* TableSectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8D41D3E01CB7DC6D007996C7 /* bounyemekhane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bounyemekhane.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D02F1A11CC8090500D81824 /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
+		8D02F1A21CC8090500D81824 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		8D02F1A31CC8090500D81824 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		8D02F1A41CC8090500D81824 /* Montserrat-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Hairline.otf"; sourceTree = "<group>"; };
+		8D02F1A51CC8090500D81824 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		8D02F1A61CC8090500D81824 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		8D02F1A71CC8090500D81824 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		8D02F1A81CC8090500D81824 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
+		8D02F1B21CC8403700D81824 /* FoodDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewController.swift; sourceTree = "<group>"; };
+		8D41D3E01CB7DC6D007996C7 /* BOUN Cafeteria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BOUN Cafeteria.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D41D3E31CB7DC6D007996C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D41D3E51CB7DC6D007996C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D41D3E81CB7DC6D007996C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8D41D3EB1CB7DC6D007996C7 /* bounyemekhane.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = bounyemekhane.xcdatamodel; sourceTree = "<group>"; };
 		8D41D3ED1CB7DC6D007996C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D41D3F01CB7DC6D007996C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D41D3F21CB7DC6D007996C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DDAFE891CC5668100197E94 /* CardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
+		8DDAFE8B1CC568BA00197E94 /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		8DDAFE8D1CC58E4B00197E94 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		8DDC6FF31CC69E78005B1C24 /* TableSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +59,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D02F1B11CC8380900D81824 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8D02F1A11CC8090500D81824 /* Montserrat-Black.otf */,
+				8D02F1A21CC8090500D81824 /* Montserrat-Bold.otf */,
+				8D02F1A31CC8090500D81824 /* Montserrat-ExtraBold.otf */,
+				8D02F1A41CC8090500D81824 /* Montserrat-Hairline.otf */,
+				8D02F1A51CC8090500D81824 /* Montserrat-Light.otf */,
+				8D02F1A61CC8090500D81824 /* Montserrat-Regular.otf */,
+				8D02F1A71CC8090500D81824 /* Montserrat-SemiBold.otf */,
+				8D02F1A81CC8090500D81824 /* Montserrat-UltraLight.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		8D41D3D71CB7DC6D007996C7 = {
 			isa = PBXGroup;
 			children = (
@@ -48,7 +85,7 @@
 		8D41D3E11CB7DC6D007996C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D41D3E01CB7DC6D007996C7 /* bounyemekhane.app */,
+				8D41D3E01CB7DC6D007996C7 /* BOUN Cafeteria.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,13 +93,17 @@
 		8D41D3E21CB7DC6D007996C7 /* bounyemekhane */ = {
 			isa = PBXGroup;
 			children = (
+				8D02F1B11CC8380900D81824 /* Fonts */,
 				8D41D3E31CB7DC6D007996C7 /* AppDelegate.swift */,
-				8D41D3E51CB7DC6D007996C7 /* ViewController.swift */,
+				8DDAFE891CC5668100197E94 /* CardTableViewController.swift */,
+				8DDAFE8B1CC568BA00197E94 /* CardTableViewCell.swift */,
+				8DDC6FF31CC69E78005B1C24 /* TableSectionHeader.swift */,
+				8D02F1B21CC8403700D81824 /* FoodDetailsViewController.swift */,
+				8DDAFE8D1CC58E4B00197E94 /* Meal.swift */,
 				8D41D3E71CB7DC6D007996C7 /* Main.storyboard */,
-				8D41D3ED1CB7DC6D007996C7 /* Assets.xcassets */,
 				8D41D3EF1CB7DC6D007996C7 /* LaunchScreen.storyboard */,
+				8D41D3ED1CB7DC6D007996C7 /* Assets.xcassets */,
 				8D41D3F21CB7DC6D007996C7 /* Info.plist */,
-				8D41D3EA1CB7DC6D007996C7 /* bounyemekhane.xcdatamodeld */,
 			);
 			path = bounyemekhane;
 			sourceTree = "<group>";
@@ -84,7 +125,7 @@
 			);
 			name = bounyemekhane;
 			productName = bounyemekhane;
-			productReference = 8D41D3E01CB7DC6D007996C7 /* bounyemekhane.app */;
+			productReference = 8D41D3E01CB7DC6D007996C7 /* BOUN Cafeteria.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,6 +140,7 @@
 				TargetAttributes = {
 					8D41D3DF1CB7DC6D007996C7 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 48R95AZD28;
 					};
 				};
 			};
@@ -125,9 +167,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D02F1AB1CC8090500D81824 /* Montserrat-ExtraBold.otf in Resources */,
+				8D02F1B01CC8090500D81824 /* Montserrat-UltraLight.otf in Resources */,
+				8D02F1AA1CC8090500D81824 /* Montserrat-Bold.otf in Resources */,
+				8D02F1AC1CC8090500D81824 /* Montserrat-Hairline.otf in Resources */,
+				8D02F1A91CC8090500D81824 /* Montserrat-Black.otf in Resources */,
 				8D41D3F11CB7DC6D007996C7 /* LaunchScreen.storyboard in Resources */,
 				8D41D3EE1CB7DC6D007996C7 /* Assets.xcassets in Resources */,
 				8D41D3E91CB7DC6D007996C7 /* Main.storyboard in Resources */,
+				8D02F1AD1CC8090500D81824 /* Montserrat-Light.otf in Resources */,
+				8D02F1AE1CC8090500D81824 /* Montserrat-Regular.otf in Resources */,
+				8D02F1AF1CC8090500D81824 /* Montserrat-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +188,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D41D3E61CB7DC6D007996C7 /* ViewController.swift in Sources */,
+				8DDAFE8E1CC58E4B00197E94 /* Meal.swift in Sources */,
 				8D41D3E41CB7DC6D007996C7 /* AppDelegate.swift in Sources */,
-				8D41D3EC1CB7DC6D007996C7 /* bounyemekhane.xcdatamodeld in Sources */,
+				8DDAFE8C1CC568BA00197E94 /* CardTableViewCell.swift in Sources */,
+				8DDC6FF41CC69E78005B1C24 /* TableSectionHeader.swift in Sources */,
+				8DDAFE8A1CC5668100197E94 /* CardTableViewController.swift in Sources */,
+				8D02F1B31CC8403800D81824 /* FoodDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,10 +308,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = bounyemekhane/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smddzcy.bounyemekhane;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "BOUN Cafeteria";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -266,10 +323,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = bounyemekhane/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smddzcy.bounyemekhane;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "BOUN Cafeteria";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -292,21 +353,9 @@
 				8D41D3F71CB7DC6D007996C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		8D41D3EA1CB7DC6D007996C7 /* bounyemekhane.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				8D41D3EB1CB7DC6D007996C7 /* bounyemekhane.xcdatamodel */,
-			);
-			currentVersion = 8D41D3EB1CB7DC6D007996C7 /* bounyemekhane.xcdatamodel */;
-			path = bounyemekhane.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 8D41D3D81CB7DC6D007996C7 /* Project object */;
 }
