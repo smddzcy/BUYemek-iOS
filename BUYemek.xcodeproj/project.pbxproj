@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F2611B128A00501F1469A62 /* Pods_bounyemekhane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859A277AC2FB64EA55C145FA /* Pods_bounyemekhane.framework */; };
+		8D0AB8C31CCD785C00659565 /* MealModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AB8C11CCD785C00659565 /* MealModel.xcdatamodeld */; };
 		8D1129DE1CCAF7B500A94B27 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1129DD1CCAF7B500A94B27 /* AppConstants.swift */; };
 		8D41D3E41CB7DC6D007996C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41D3E31CB7DC6D007996C7 /* AppDelegate.swift */; };
 		8D41D3E91CB7DC6D007996C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D41D3E71CB7DC6D007996C7 /* Main.storyboard */; };
@@ -25,13 +25,15 @@
 		8DDAFE8C1CC568BA00197E94 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAFE8B1CC568BA00197E94 /* CardTableViewCell.swift */; };
 		8DDAFE8E1CC58E4B00197E94 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAFE8D1CC58E4B00197E94 /* Meal.swift */; };
 		8DDC6FF41CC69E78005B1C24 /* TableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC6FF31CC69E78005B1C24 /* TableSectionHeader.swift */; };
+		D9F526C4E8C2A4E16FD01886 /* Pods_BUYemek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A975254429986C017EF5BB6A /* Pods_BUYemek.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		472F5EFE77DC9B6576FD3FA2 /* Pods-bounyemekhane.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bounyemekhane.release.xcconfig"; path = "Pods/Target Support Files/Pods-bounyemekhane/Pods-bounyemekhane.release.xcconfig"; sourceTree = "<group>"; };
-		7D21BF2602CB736B560ABA69 /* Pods-bounyemekhane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bounyemekhane.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bounyemekhane/Pods-bounyemekhane.debug.xcconfig"; sourceTree = "<group>"; };
+		05EE5B90000517777BD24DC8 /* Pods-BUYemek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUYemek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BUYemek/Pods-BUYemek.debug.xcconfig"; sourceTree = "<group>"; };
+		39B16E3DC7C35102C3EBE4D2 /* Pods-BUYemek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUYemek.release.xcconfig"; path = "Pods/Target Support Files/Pods-BUYemek/Pods-BUYemek.release.xcconfig"; sourceTree = "<group>"; };
 		859A277AC2FB64EA55C145FA /* Pods_bounyemekhane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bounyemekhane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D02F1B21CC8403700D81824 /* FoodDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewController.swift; sourceTree = "<group>"; };
+		8D0AB8C21CCD785C00659565 /* MealModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealModel.xcdatamodel; sourceTree = "<group>"; };
 		8D1129DD1CCAF7B500A94B27 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		8D41D3E01CB7DC6D007996C7 /* BUYemek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BUYemek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D41D3E31CB7DC6D007996C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 		8DDAFE8B1CC568BA00197E94 /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		8DDAFE8D1CC58E4B00197E94 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		8DDC6FF31CC69E78005B1C24 /* TableSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSectionHeader.swift; sourceTree = "<group>"; };
+		A975254429986C017EF5BB6A /* Pods_BUYemek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUYemek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F2611B128A00501F1469A62 /* Pods_bounyemekhane.framework in Frameworks */,
+				D9F526C4E8C2A4E16FD01886 /* Pods_BUYemek.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,8 +71,8 @@
 		3B71B0F8B15D772EBE94995E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7D21BF2602CB736B560ABA69 /* Pods-bounyemekhane.debug.xcconfig */,
-				472F5EFE77DC9B6576FD3FA2 /* Pods-bounyemekhane.release.xcconfig */,
+				05EE5B90000517777BD24DC8 /* Pods-BUYemek.debug.xcconfig */,
+				39B16E3DC7C35102C3EBE4D2 /* Pods-BUYemek.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -115,6 +118,7 @@
 				8DDAFE891CC5668100197E94 /* CardTableViewController.swift */,
 				8DDAFE8B1CC568BA00197E94 /* CardTableViewCell.swift */,
 				8D1129DD1CCAF7B500A94B27 /* AppConstants.swift */,
+				8D0AB8C11CCD785C00659565 /* MealModel.xcdatamodeld */,
 				8DDC6FF31CC69E78005B1C24 /* TableSectionHeader.swift */,
 				8D02F1B21CC8403700D81824 /* FoodDetailsViewController.swift */,
 				8DDAFE8D1CC58E4B00197E94 /* Meal.swift */,
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				859A277AC2FB64EA55C145FA /* Pods_bounyemekhane.framework */,
+				A975254429986C017EF5BB6A /* Pods_BUYemek.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -225,7 +230,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bounyemekhane/Pods-bounyemekhane-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BUYemek/Pods-BUYemek-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A09F94C71183DD4D3F9A7454 /* 📦 Copy Pods Resources */ = {
@@ -240,7 +245,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bounyemekhane/Pods-bounyemekhane-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BUYemek/Pods-BUYemek-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BCDAD753125EFA6F71D628D4 /* 📦 Check Pods Manifest.lock */ = {
@@ -267,6 +272,7 @@
 			files = (
 				8DDAFE8E1CC58E4B00197E94 /* Meal.swift in Sources */,
 				8D1129DE1CCAF7B500A94B27 /* AppConstants.swift in Sources */,
+				8D0AB8C31CCD785C00659565 /* MealModel.xcdatamodeld in Sources */,
 				8D41D3E41CB7DC6D007996C7 /* AppDelegate.swift in Sources */,
 				8DDAFE8C1CC568BA00197E94 /* CardTableViewCell.swift in Sources */,
 				8DDC6FF41CC69E78005B1C24 /* TableSectionHeader.swift in Sources */,
@@ -383,7 +389,7 @@
 		};
 		8D41D3F61CB7DC6D007996C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D21BF2602CB736B560ABA69 /* Pods-bounyemekhane.debug.xcconfig */;
+			baseConfigurationReference = 05EE5B90000517777BD24DC8 /* Pods-BUYemek.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -399,7 +405,7 @@
 		};
 		8D41D3F71CB7DC6D007996C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 472F5EFE77DC9B6576FD3FA2 /* Pods-bounyemekhane.release.xcconfig */;
+			baseConfigurationReference = 39B16E3DC7C35102C3EBE4D2 /* Pods-BUYemek.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -435,6 +441,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8D0AB8C11CCD785C00659565 /* MealModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8D0AB8C21CCD785C00659565 /* MealModel.xcdatamodel */,
+			);
+			currentVersion = 8D0AB8C21CCD785C00659565 /* MealModel.xcdatamodel */;
+			path = MealModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8D41D3D81CB7DC6D007996C7 /* Project object */;
 }

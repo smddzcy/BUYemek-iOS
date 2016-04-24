@@ -96,16 +96,22 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVo-ce-lXr">
                                             <rect key="frame" x="8" y="4" width="584" height="72"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="FIb-9T-XpD">
+                                                <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FIb-9T-XpD">
                                                     <rect key="frame" x="0.0" y="0.0" width="143" height="72"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                                    </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="143" id="mOk-dR-F2F"/>
+                                                        <constraint firstAttribute="width" constant="143" id="PCW-ad-vab"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kalori :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S10-bo-oOj">
                                                     <rect key="frame" x="151" y="42" width="44" height="22"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="nCi-cN-0aM"/>
+                                                        <constraint firstAttribute="width" constant="44" id="FBd-oi-Zpt"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
                                                     <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
@@ -113,12 +119,18 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AHq-pe-7FN">
                                                     <rect key="frame" x="151" y="8" width="425" height="37"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="400.5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEN-mT-pcm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="400.5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="QEN-mT-pcm">
                                                     <rect key="frame" x="195" y="43" width="359" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
                                                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="12"/>
                                                     <color key="textColor" red="0.46666666670000001" green="0.78039215689999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,28 +138,28 @@
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="S10-bo-oOj" firstAttribute="centerY" secondItem="QEN-mT-pcm" secondAttribute="centerY" id="6SL-uj-3HG"/>
-                                                <constraint firstItem="AHq-pe-7FN" firstAttribute="trailing" secondItem="TVo-ce-lXr" secondAttribute="trailingMargin" id="8Pj-Px-dRK"/>
-                                                <constraint firstItem="AHq-pe-7FN" firstAttribute="leading" secondItem="FIb-9T-XpD" secondAttribute="trailing" constant="8" symbolic="YES" id="APM-zU-GaR"/>
-                                                <constraint firstItem="S10-bo-oOj" firstAttribute="top" secondItem="TVo-ce-lXr" secondAttribute="top" constant="42" id="Agk-8s-rkq"/>
-                                                <constraint firstAttribute="trailing" secondItem="QEN-mT-pcm" secondAttribute="trailing" constant="30" id="LoH-6C-5wG"/>
-                                                <constraint firstItem="FIb-9T-XpD" firstAttribute="leading" secondItem="TVo-ce-lXr" secondAttribute="leading" id="Rhl-nV-v23"/>
-                                                <constraint firstItem="AHq-pe-7FN" firstAttribute="leading" secondItem="S10-bo-oOj" secondAttribute="leading" id="aJg-QE-I12"/>
-                                                <constraint firstItem="S10-bo-oOj" firstAttribute="bottom" secondItem="TVo-ce-lXr" secondAttribute="bottomMargin" id="csM-pU-45X"/>
-                                                <constraint firstAttribute="bottom" secondItem="AHq-pe-7FN" secondAttribute="bottom" constant="27" id="fwe-cT-v7P"/>
-                                                <constraint firstItem="FIb-9T-XpD" firstAttribute="top" secondItem="TVo-ce-lXr" secondAttribute="top" id="gmj-fh-HXZ"/>
-                                                <constraint firstItem="QEN-mT-pcm" firstAttribute="leading" secondItem="S10-bo-oOj" secondAttribute="trailing" id="lRp-Go-ILU"/>
-                                                <constraint firstAttribute="bottom" secondItem="FIb-9T-XpD" secondAttribute="bottom" id="rtL-Ii-uUM"/>
-                                                <constraint firstItem="AHq-pe-7FN" firstAttribute="top" secondItem="TVo-ce-lXr" secondAttribute="topMargin" id="wXM-qt-2Zn"/>
-                                                <constraint firstItem="S10-bo-oOj" firstAttribute="bottom" secondItem="QEN-mT-pcm" secondAttribute="bottom" id="xdg-ct-k6S"/>
+                                                <constraint firstItem="AHq-pe-7FN" firstAttribute="leading" secondItem="FIb-9T-XpD" secondAttribute="trailing" constant="8" symbolic="YES" id="1E1-1t-khp"/>
+                                                <constraint firstItem="AHq-pe-7FN" firstAttribute="trailing" secondItem="TVo-ce-lXr" secondAttribute="trailingMargin" id="86Y-Z3-ecf"/>
+                                                <constraint firstItem="AHq-pe-7FN" firstAttribute="top" secondItem="TVo-ce-lXr" secondAttribute="topMargin" id="Agt-BQ-zca"/>
+                                                <constraint firstItem="S10-bo-oOj" firstAttribute="centerY" secondItem="QEN-mT-pcm" secondAttribute="centerY" id="ENU-qk-rDy"/>
+                                                <constraint firstAttribute="trailing" secondItem="QEN-mT-pcm" secondAttribute="trailing" constant="30" id="KHP-j1-Yol"/>
+                                                <constraint firstAttribute="bottom" secondItem="FIb-9T-XpD" secondAttribute="bottom" id="KKZ-36-5vU"/>
+                                                <constraint firstItem="FIb-9T-XpD" firstAttribute="leading" secondItem="TVo-ce-lXr" secondAttribute="leading" id="Mwi-mh-xsO"/>
+                                                <constraint firstItem="S10-bo-oOj" firstAttribute="bottom" secondItem="QEN-mT-pcm" secondAttribute="bottom" id="QLV-M7-Juh"/>
+                                                <constraint firstItem="S10-bo-oOj" firstAttribute="bottom" secondItem="TVo-ce-lXr" secondAttribute="bottomMargin" id="aZW-xO-jb6"/>
+                                                <constraint firstItem="S10-bo-oOj" firstAttribute="top" secondItem="TVo-ce-lXr" secondAttribute="top" constant="42" id="g2S-Tx-aDa"/>
+                                                <constraint firstAttribute="bottom" secondItem="AHq-pe-7FN" secondAttribute="bottom" constant="27" id="low-kT-zdr"/>
+                                                <constraint firstItem="QEN-mT-pcm" firstAttribute="leading" secondItem="S10-bo-oOj" secondAttribute="trailing" id="rnf-2U-VXc"/>
+                                                <constraint firstItem="FIb-9T-XpD" firstAttribute="top" secondItem="TVo-ce-lXr" secondAttribute="top" id="tfD-KW-7Ha"/>
+                                                <constraint firstItem="AHq-pe-7FN" firstAttribute="leading" secondItem="S10-bo-oOj" secondAttribute="leading" id="tkd-ZW-dc7"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="TVo-ce-lXr" firstAttribute="top" secondItem="XWe-0l-rvI" secondAttribute="topMargin" constant="-4" id="GPa-ot-kCx"/>
-                                        <constraint firstItem="TVo-ce-lXr" firstAttribute="centerY" secondItem="XWe-0l-rvI" secondAttribute="centerY" id="XOH-iL-rNJ"/>
-                                        <constraint firstItem="TVo-ce-lXr" firstAttribute="trailing" secondItem="XWe-0l-rvI" secondAttribute="trailingMargin" id="fpk-gp-VXA"/>
-                                        <constraint firstItem="TVo-ce-lXr" firstAttribute="leading" secondItem="XWe-0l-rvI" secondAttribute="leadingMargin" id="udo-ZX-nKQ"/>
+                                        <constraint firstItem="TVo-ce-lXr" firstAttribute="centerY" secondItem="XWe-0l-rvI" secondAttribute="centerY" id="8kR-jT-C30"/>
+                                        <constraint firstItem="TVo-ce-lXr" firstAttribute="trailing" secondItem="XWe-0l-rvI" secondAttribute="trailingMargin" id="ssD-T8-mnE"/>
+                                        <constraint firstItem="TVo-ce-lXr" firstAttribute="leading" secondItem="XWe-0l-rvI" secondAttribute="leadingMargin" id="ugj-gy-MwP"/>
+                                        <constraint firstItem="TVo-ce-lXr" firstAttribute="top" secondItem="XWe-0l-rvI" secondAttribute="topMargin" constant="-4" id="xvp-9T-CIJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -277,6 +289,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="noImage" width="350" height="175"/>
+        <image name="noImage" width="593" height="426"/>
     </resources>
 </document>

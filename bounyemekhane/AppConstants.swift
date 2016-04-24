@@ -10,7 +10,7 @@ import UIKit
 
 struct AppConstants{
     static let mainBlueColor: UIColor = UIColor(red: 119/255.0, green: 199/255.0, blue: 253/255.0, alpha: 1)
-    static let apiURL: String = "http://www.smddzcy.com/BUYemek/api.php"
+    static let apiURL: String = "http://localhost/bounyemekhane-rest-api/api.php"
     static let lunchHeaderText: String = "ÖĞLE YEMEĞİ"
     static let dinnerHeaderText: String = "AKŞAM YEMEĞİ"
     static let notAvailableText: String = "NA"

@@ -5,11 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Montserrat-Hairline.otf">
-            <string>Montserrat-Hairline</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -26,39 +21,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etd-iT-6Oy">
                                 <rect key="frame" x="20" y="20" width="560" height="560"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="QH5-mx-6RE">
-                                        <rect key="frame" x="205" y="205" width="150" height="150"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="QH5-mx-6RE">
+                                        <rect key="frame" x="190" y="170" width="180" height="219"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="1QU-rc-wrb"/>
-                                            <constraint firstAttribute="height" constant="150" id="4jY-77-tOT"/>
+                                            <constraint firstAttribute="width" constant="180" id="eTa-pR-HSS"/>
+                                            <constraint firstAttribute="height" constant="219" id="xR6-Dy-wu6"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUYemek" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYc-zm-WyS">
-                                        <rect key="frame" x="8" y="157" width="544" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="KBW-iy-mB7"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Hairline" family="Montserrat" pointSize="25"/>
-                                        <color key="textColor" red="0.46666666666666667" green="0.7803921568627451" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="gYc-zm-WyS" firstAttribute="centerX" secondItem="QH5-mx-6RE" secondAttribute="centerX" id="CPg-sd-JB5"/>
-                                    <constraint firstItem="QH5-mx-6RE" firstAttribute="top" secondItem="gYc-zm-WyS" secondAttribute="bottom" constant="8" symbolic="YES" id="MAT-9z-jKj"/>
-                                    <constraint firstItem="gYc-zm-WyS" firstAttribute="trailing" secondItem="etd-iT-6Oy" secondAttribute="trailingMargin" id="QtG-h3-ZRu"/>
-                                    <constraint firstItem="QH5-mx-6RE" firstAttribute="centerY" secondItem="etd-iT-6Oy" secondAttribute="centerY" id="dda-CC-jmA"/>
-                                    <constraint firstItem="gYc-zm-WyS" firstAttribute="leading" secondItem="etd-iT-6Oy" secondAttribute="leadingMargin" id="igO-Lb-jDP"/>
+                                    <constraint firstItem="QH5-mx-6RE" firstAttribute="centerY" secondItem="etd-iT-6Oy" secondAttribute="centerY" id="3lq-E3-kLG"/>
+                                    <constraint firstItem="QH5-mx-6RE" firstAttribute="centerX" secondItem="etd-iT-6Oy" secondAttribute="centerX" id="mM4-kd-Vmi"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="etd-iT-6Oy" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="4zg-pU-vL6"/>
-                            <constraint firstItem="etd-iT-6Oy" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="bkR-N9-lfn"/>
-                            <constraint firstItem="etd-iT-6Oy" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="mHv-k7-l2y"/>
-                            <constraint firstAttribute="bottom" secondItem="etd-iT-6Oy" secondAttribute="bottom" constant="20" symbolic="YES" id="zTC-JV-dV2"/>
+                            <constraint firstItem="etd-iT-6Oy" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="VFh-c7-Fa4"/>
+                            <constraint firstItem="etd-iT-6Oy" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="nv7-aW-JKh"/>
+                            <constraint firstItem="etd-iT-6Oy" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="ohi-zS-Zq1"/>
+                            <constraint firstAttribute="bottom" secondItem="etd-iT-6Oy" secondAttribute="bottom" constant="20" symbolic="YES" id="yOS-fz-pj7"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -68,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logoImage" width="600" height="600"/>
+        <image name="launchScreenImage" width="600" height="730"/>
     </resources>
 </document>
