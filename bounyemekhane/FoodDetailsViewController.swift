@@ -13,7 +13,7 @@ class FoodDetailsViewController: UIViewController {
     @IBOutlet weak var _imageView: UIImageView!
     @IBOutlet weak var calorieField: UILabel!
     @IBOutlet weak var nameField: UILabel!
-    
+
     var name: String = ""
     var calories: String = ""
     
