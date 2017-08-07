@@ -14,26 +14,41 @@ import ActionSheetPicker_3_0
 
 class CardTableViewController: UIViewController {
   
-  
+  // MARK: - IBOutlets
   @IBOutlet var _tableView: UITableView!
   @IBOutlet weak var dateField: UILabel!
   @IBOutlet weak var selectDateButton: UIButton!
   
+  // MARK: - Properties
   private var date:Date = Date()
-  
   var cachedMeals = [NSManagedObject]()
   var lunchFoods: [Meal] = []
   var dinnerFoods: [Meal] = []
   var imagePaths: NSDictionary = NSDictionary()
   
   
+  // MARK: - Lifecycles
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    dateField.text = self.date.toLabel()
+    getFoodList(date: self.date.toString())
+    
+    // Add white borders to datepicker button
+    selectDateButton.layer.cornerRadius = 5
+    selectDateButton.layer.borderWidth = 1
+    selectDateButton.layer.borderColor = UIColor.white.cgColor
+    selectDateButton.setTitleColor(UIColor.primaryColor(), for: .highlighted)
+  }
+  
+  // MARK: - IBActions
   /**
    Opens up the datepicker screen
    
    - parameter sender: "Select the date" button in the navigation bar
    */
   @IBAction func selectDatePressed(sender: UIButton) -> Void {
-    let datePicker = ActionSheetDatePicker(title: "Tarih:", datePickerMode: .date, selectedDate: Date(),
+    let datePicker = ActionSheetDatePicker(title: "Tarih:", datePickerMode: .date, selectedDate: self.date,
         doneBlock: { picker, value, index in
           self.date = value as! Date
           self.dateField.text = self.date.toLabel()
@@ -45,6 +60,7 @@ class CardTableViewController: UIViewController {
     datePicker?.show()
   }
   
+  // MARK: - Helpers
   /**
    Parses JSON data
    
@@ -263,27 +279,9 @@ class CardTableViewController: UIViewController {
     } catch  { }
     
   }
-  
-  /**
-   Executed after the view is loaded; it initializes the first view and sets some design options
-   */
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    dateField.text = self.date.toLabel()
-    getFoodList(date: self.date.toString())
-    
-    print(Date().firstDayOfMonth().toLabel())
-    print(Date().lastDayOfMonth().toLabel())
-    
-    // Add white borders to datepicker button
-    selectDateButton.layer.cornerRadius = 5
-    selectDateButton.layer.borderWidth = 1
-    selectDateButton.layer.borderColor = UIColor.white.cgColor
-    selectDateButton.setTitleColor(UIColor.primaryColor(), for: .highlighted)
-  }
 }
 
+// MARK: - UITableView Delegate, UITableView DataSource
 extension CardTableViewController: UITableViewDelegate, UITableViewDataSource {
   /**
    Used by app to set titles for the headers of sections
