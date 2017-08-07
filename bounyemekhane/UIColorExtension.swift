@@ -44,4 +44,9 @@ extension UIColor {
     UIGraphicsEndImageContext()
     return image!
   }
+  
+  static func primaryColor() -> UIColor {
+    return UIColor(red: 119/255.0, green: 199/255.0, blue: 253/255.0, alpha: 1)
+  }
+
 }

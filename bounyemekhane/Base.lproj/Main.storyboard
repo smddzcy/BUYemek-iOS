@@ -39,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016/04/19" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcT-oV-HhS">
-                                        <rect key="frame" x="60" y="13" width="120" height="20"/>
+                                        <rect key="frame" x="60" y="13" width="120" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="XyH-eK-KHX"/>
                                         </constraints>
@@ -48,7 +48,7 @@
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbf-lG-Hfh">
-                                        <rect key="frame" x="247" y="6" width="120" height="33"/>
+                                        <rect key="frame" x="247" y="5" width="120" height="33"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="Tb6-l3-Ffu"/>
@@ -63,7 +63,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tarih:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03L-e1-uLk">
-                                        <rect key="frame" x="8" y="13" width="50" height="20"/>
+                                        <rect key="frame" x="8" y="13" width="50" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="gvk-as-l49"/>
                                         </constraints>
@@ -86,7 +86,7 @@
                                     <constraint firstItem="03L-e1-uLk" firstAttribute="firstBaseline" secondItem="EcT-oV-HhS" secondAttribute="firstBaseline" id="y64-hz-1f7"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pys-Uz-fNc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pys-Uz-fNc">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -94,7 +94,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ECr-jY-B8a" id="nVO-qk-z0D">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ro5-bn-JQx">

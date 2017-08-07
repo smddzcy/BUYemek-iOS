@@ -14,23 +14,18 @@ import ActionSheetPicker_3_0
 
 class CardTableViewController: UIViewController {
   
-  private var cachedMeals = [NSManagedObject]()
   
   @IBOutlet var _tableView: UITableView!
   @IBOutlet weak var dateField: UILabel!
   @IBOutlet weak var selectDateButton: UIButton!
   
-  private var dateFormatter: DateFormatter = DateFormatter()
-  private var date: String = ""
-  private var pickerOpened:Bool = false
-  private var picker : UIDatePicker = UIDatePicker()
+  private var date:Date = Date()
   
-  public var lunchFoods: [Meal] = []
-  public var dinnerFoods: [Meal] = []
-  public var imagePaths: NSDictionary = NSDictionary()
+  var cachedMeals = [NSManagedObject]()
+  var lunchFoods: [Meal] = []
+  var dinnerFoods: [Meal] = []
+  var imagePaths: NSDictionary = NSDictionary()
   
-  let datePicker : UIDatePicker = UIDatePicker()
-  let datePickerContainer = UIView()
   
   /**
    Opens up the datepicker screen
@@ -40,24 +35,14 @@ class CardTableViewController: UIViewController {
   @IBAction func selectDatePressed(sender: UIButton) -> Void {
     let datePicker = ActionSheetDatePicker(title: "Tarih:", datePickerMode: .date, selectedDate: Date(),
         doneBlock: { picker, value, index in
-          self.date = self.dateFormatter.string(from: value as! Date)
-          self.dateField.text = self.date
-          self.getFoodList(date: self.date)
+          self.date = value as! Date
+          self.dateField.text = self.date.toLabel()
+          self.getFoodList(date: self.date.toString())
           return
         }, cancel: { ActionStringCancelBlock in return }, origin: sender.superview!.superview)
-    datePicker?.minimumDate = self.dateFormatter.date(from: "2016/04/01") // started storing data on April 1st
+    datePicker?.minimumDate = Date(fromString: Constants.firstDaytoSelect) // started storing data on April 1st
     datePicker?.maximumDate = Date().lastDayOfMonth()
     datePicker?.show()
-  }
-  
-  
-  
-  /**
-   Initializes the date field text & `date` property
-   */
-  func initializeDate() {
-    date = dateFormatter.string(from: Date())
-    dateField.text = date
   }
   
   /**
@@ -158,7 +143,7 @@ class CardTableViewController: UIViewController {
     // add a loading indicator
     let loadingIndicator = addActivityIndicator(view: _tableView)
     
-    Alamofire.request("\(AppConstants.apiURL)/cafeteria/menu/\(date)")
+    Alamofire.request("\(Constants.apiURL)/cafeteria/menu/\(date)")
       .validate()
       .responseJSON { response in
         if response.result.isFailure {
@@ -168,7 +153,7 @@ class CardTableViewController: UIViewController {
         }else{
           let foodList: NSDictionary = response.result.value as! NSDictionary
           
-          Alamofire.request("\(AppConstants.apiURL)/cafeteria/calories/\(date)")
+          Alamofire.request("\(Constants.apiURL)/cafeteria/calories/\(date)")
             .validate()
             .responseJSON {response2 in
               
@@ -217,7 +202,7 @@ class CardTableViewController: UIViewController {
    */
   func getFoodImages(date: String){
     // get all images for the day
-    Alamofire.request("\(AppConstants.apiURL)/cafeteria/images/\(date)")
+    Alamofire.request("\(Constants.apiURL)/cafeteria/images/\(date)")
       .validate()
       .responseJSON { response in
         if response.result.value != nil{
@@ -319,22 +304,22 @@ class CardTableViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    dateFormatter.dateFormat = "YYYY/MM/dd"
-    initializeDate()
-    getFoodList(date: date)
+    dateField.text = self.date.toLabel()
+    getFoodList(date: self.date.toString())
     
-    self._tableView.separatorColor = UIColor.clear // delete cell separators
+    print(Date().firstDayOfMonth().toLabel())
+    print(Date().lastDayOfMonth().toLabel())
     
     // Add white borders to datepicker button
     selectDateButton.layer.cornerRadius = 5
     selectDateButton.layer.borderWidth = 1
     selectDateButton.layer.borderColor = UIColor.white.cgColor
-    selectDateButton.setTitleColor(AppConstants.mainBlueColor, for: .highlighted)
+    selectDateButton.setTitleColor(UIColor.primaryColor(), for: .highlighted)
     
     // Set background&text colors of navbar
     let nav = self.navigationController?.navigationBar
     nav?.isTranslucent = false
-    nav?.barTintColor = AppConstants.mainBlueColor // actual color is same as select date button highlight color
+    nav?.barTintColor = UIColor.primaryColor() // actual color is same as select date button highlight color
     nav?.tintColor = UIColor.white
     nav?.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
     nav?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -354,9 +339,9 @@ extension CardTableViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     switch section {
     case 0:
-      return AppConstants.lunchHeaderText
+      return Constants.lunchHeaderText
     case 1:
-      return AppConstants.lunchHeaderText
+      return Constants.dinnerHeaderText
     default:
       return nil
     }
@@ -371,7 +356,7 @@ extension CardTableViewController: UITableViewDelegate, UITableViewDataSource {
    */
   func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
-    header.contentView.backgroundColor = AppConstants.mainBlueColor
+    header.contentView.backgroundColor = UIColor.primaryColor()
     header.textLabel!.textColor = UIColor.white
     header.textLabel?.font = UIFont.init(name: "Montserrat-Light", size: 17)
   }

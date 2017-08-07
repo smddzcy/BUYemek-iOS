@@ -17,7 +17,7 @@ class Meal{
     private var imageViews: [UIImageView]
     
     convenience init(name: String, meal: String, date: String){
-        self.init(name: name,meal: meal,date: date, calorie: AppConstants.notAvailableText)
+        self.init(name: name,meal: meal,date: date, calorie: Constants.notAvailableText)
     }
     
     init(name: String, meal: String, date: String, calorie: String){
