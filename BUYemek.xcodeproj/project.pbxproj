@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F4C72BB1F38925D006F36F3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C72BA1F38925D006F36F3 /* UIColorExtension.swift */; };
+		4F4C72BD1F38B2B7006F36F3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C72BC1F38B2B7006F36F3 /* DateExtension.swift */; };
+		4F4C72C61F38E18C006F36F3 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C72C51F38E18C006F36F3 /* UIViewControllerExtension.swift */; };
+		4F4C72C81F38E4CE006F36F3 /* BUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C72C71F38E4CE006F36F3 /* BUButton.swift */; };
 		8D0AB8C31CCD785C00659565 /* MealModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AB8C11CCD785C00659565 /* MealModel.xcdatamodeld */; };
-		8D1129DE1CCAF7B500A94B27 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1129DD1CCAF7B500A94B27 /* AppConstants.swift */; };
+		8D1129DE1CCAF7B500A94B27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1129DD1CCAF7B500A94B27 /* Constants.swift */; };
 		8D41D3E41CB7DC6D007996C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41D3E31CB7DC6D007996C7 /* AppDelegate.swift */; };
 		8D41D3E91CB7DC6D007996C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D41D3E71CB7DC6D007996C7 /* Main.storyboard */; };
 		8D41D3EE1CB7DC6D007996C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D41D3ED1CB7DC6D007996C7 /* Assets.xcassets */; };
@@ -31,10 +35,14 @@
 /* Begin PBXFileReference section */
 		05EE5B90000517777BD24DC8 /* Pods-BUYemek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUYemek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BUYemek/Pods-BUYemek.debug.xcconfig"; sourceTree = "<group>"; };
 		39B16E3DC7C35102C3EBE4D2 /* Pods-BUYemek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUYemek.release.xcconfig"; path = "Pods/Target Support Files/Pods-BUYemek/Pods-BUYemek.release.xcconfig"; sourceTree = "<group>"; };
+		4F4C72BA1F38925D006F36F3 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		4F4C72BC1F38B2B7006F36F3 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		4F4C72C51F38E18C006F36F3 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		4F4C72C71F38E4CE006F36F3 /* BUButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BUButton.swift; sourceTree = "<group>"; };
 		859A277AC2FB64EA55C145FA /* Pods_bounyemekhane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bounyemekhane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D02F1B21CC8403700D81824 /* FoodDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewController.swift; sourceTree = "<group>"; };
 		8D0AB8C21CCD785C00659565 /* MealModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealModel.xcdatamodel; sourceTree = "<group>"; };
-		8D1129DD1CCAF7B500A94B27 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		8D1129DD1CCAF7B500A94B27 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8D41D3E01CB7DC6D007996C7 /* BUYemek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BUYemek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D41D3E31CB7DC6D007996C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D41D3E81CB7DC6D007996C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +85,72 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4F4C72BE1F38DE1D006F36F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F4C72BA1F38925D006F36F3 /* UIColorExtension.swift */,
+				4F4C72BC1F38B2B7006F36F3 /* DateExtension.swift */,
+				4F4C72C51F38E18C006F36F3 /* UIViewControllerExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		4F4C72BF1F38DE50006F36F3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8DDAFE891CC5668100197E94 /* CardTableViewController.swift */,
+				8D02F1B21CC8403700D81824 /* FoodDetailsViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4F4C72C01F38DE60006F36F3 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				8DDC6FF31CC69E78005B1C24 /* TableSectionHeader.swift */,
+				8DDAFE8B1CC568BA00197E94 /* CardTableViewCell.swift */,
+				4F4C72C71F38E4CE006F36F3 /* BUButton.swift */,
+			);
+			name = Subclasses;
+			sourceTree = "<group>";
+		};
+		4F4C72C11F38DE7D006F36F3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8D41D3EF1CB7DC6D007996C7 /* LaunchScreen.storyboard */,
+				8D41D3E71CB7DC6D007996C7 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		4F4C72C21F38DE96006F36F3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8D1129DD1CCAF7B500A94B27 /* Constants.swift */,
+				4F4C72C01F38DE60006F36F3 /* Subclasses */,
+				4F4C72BE1F38DE1D006F36F3 /* Extensions */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		4F4C72C31F38DECD006F36F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D02F1B11CC8380900D81824 /* Fonts */,
+				8D0AB8C11CCD785C00659565 /* MealModel.xcdatamodeld */,
+				8D41D3ED1CB7DC6D007996C7 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4F4C72C41F38DEFE006F36F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8DDAFE8D1CC58E4B00197E94 /* Meal.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		8D02F1B11CC8380900D81824 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,18 +187,12 @@
 		8D41D3E21CB7DC6D007996C7 /* bounyemekhane */ = {
 			isa = PBXGroup;
 			children = (
-				8D02F1B11CC8380900D81824 /* Fonts */,
 				8D41D3E31CB7DC6D007996C7 /* AppDelegate.swift */,
-				8DDAFE891CC5668100197E94 /* CardTableViewController.swift */,
-				8DDAFE8B1CC568BA00197E94 /* CardTableViewCell.swift */,
-				8D1129DD1CCAF7B500A94B27 /* AppConstants.swift */,
-				8D0AB8C11CCD785C00659565 /* MealModel.xcdatamodeld */,
-				8DDC6FF31CC69E78005B1C24 /* TableSectionHeader.swift */,
-				8D02F1B21CC8403700D81824 /* FoodDetailsViewController.swift */,
-				8DDAFE8D1CC58E4B00197E94 /* Meal.swift */,
-				8D41D3E71CB7DC6D007996C7 /* Main.storyboard */,
-				8D41D3EF1CB7DC6D007996C7 /* LaunchScreen.storyboard */,
-				8D41D3ED1CB7DC6D007996C7 /* Assets.xcassets */,
+				4F4C72C21F38DE96006F36F3 /* Utility */,
+				4F4C72C41F38DEFE006F36F3 /* Models */,
+				4F4C72BF1F38DE50006F36F3 /* View Controllers */,
+				4F4C72C11F38DE7D006F36F3 /* Storyboards */,
+				4F4C72C31F38DECD006F36F3 /* Resources */,
 				8D41D3F21CB7DC6D007996C7 /* Info.plist */,
 			);
 			path = bounyemekhane;
@@ -146,12 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D41D3F51CB7DC6D007996C7 /* Build configuration list for PBXNativeTarget "BUYemek" */;
 			buildPhases = (
-				BCDAD753125EFA6F71D628D4 /* 📦 Check Pods Manifest.lock */,
+				BCDAD753125EFA6F71D628D4 /* [CP] Check Pods Manifest.lock */,
 				8D41D3DC1CB7DC6D007996C7 /* Sources */,
 				8D41D3DD1CB7DC6D007996C7 /* Frameworks */,
 				8D41D3DE1CB7DC6D007996C7 /* Resources */,
-				6D054E56B2664CBB7989DF09 /* 📦 Embed Pods Frameworks */,
-				A09F94C71183DD4D3F9A7454 /* 📦 Copy Pods Resources */,
+				6D054E56B2664CBB7989DF09 /* [CP] Embed Pods Frameworks */,
+				A09F94C71183DD4D3F9A7454 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -169,12 +237,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Samed Duzcay";
 				TargetAttributes = {
 					8D41D3DF1CB7DC6D007996C7 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 48R95AZD28;
+						DevelopmentTeam = CU9SUZ54RA;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -218,14 +287,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6D054E56B2664CBB7989DF09 /* 📦 Embed Pods Frameworks */ = {
+		6D054E56B2664CBB7989DF09 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,14 +302,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BUYemek/Pods-BUYemek-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A09F94C71183DD4D3F9A7454 /* 📦 Copy Pods Resources */ = {
+		A09F94C71183DD4D3F9A7454 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,19 +317,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BUYemek/Pods-BUYemek-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BCDAD753125EFA6F71D628D4 /* 📦 Check Pods Manifest.lock */ = {
+		BCDAD753125EFA6F71D628D4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -271,11 +340,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DDAFE8E1CC58E4B00197E94 /* Meal.swift in Sources */,
-				8D1129DE1CCAF7B500A94B27 /* AppConstants.swift in Sources */,
+				8D1129DE1CCAF7B500A94B27 /* Constants.swift in Sources */,
+				4F4C72C61F38E18C006F36F3 /* UIViewControllerExtension.swift in Sources */,
 				8D0AB8C31CCD785C00659565 /* MealModel.xcdatamodeld in Sources */,
+				4F4C72BB1F38925D006F36F3 /* UIColorExtension.swift in Sources */,
+				4F4C72BD1F38B2B7006F36F3 /* DateExtension.swift in Sources */,
 				8D41D3E41CB7DC6D007996C7 /* AppDelegate.swift in Sources */,
 				8DDAFE8C1CC568BA00197E94 /* CardTableViewCell.swift in Sources */,
 				8DDC6FF41CC69E78005B1C24 /* TableSectionHeader.swift in Sources */,
+				4F4C72C81F38E4CE006F36F3 /* BUButton.swift in Sources */,
 				8DDAFE8A1CC5668100197E94 /* CardTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,13 +384,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -344,6 +425,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -357,13 +439,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -382,6 +472,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -391,15 +483,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05EE5B90000517777BD24DC8 /* Pods-BUYemek.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CU9SUZ54RA;
 				INFOPLIST_FILE = bounyemekhane/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smddzcy.bounyemekhane;
 				PRODUCT_NAME = BUYemek;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -407,15 +502,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39B16E3DC7C35102C3EBE4D2 /* Pods-BUYemek.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CU9SUZ54RA;
 				INFOPLIST_FILE = bounyemekhane/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smddzcy.bounyemekhane;
 				PRODUCT_NAME = BUYemek;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

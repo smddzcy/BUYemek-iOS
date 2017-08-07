@@ -17,7 +17,7 @@ class Meal{
     private var imageViews: [UIImageView]
     
     convenience init(name: String, meal: String, date: String){
-        self.init(name: name,meal: meal,date: date, calorie: AppConstants.notAvailableText)
+        self.init(name: name,meal: meal,date: date, calorie: Constants.notAvailableText)
     }
     
     init(name: String, meal: String, date: String, calorie: String){
@@ -66,11 +66,8 @@ class Meal{
     
     func setImageView(imageView: UIImageView, atIndex: Int){
         if atIndex < self.imageViews.endIndex{
-            self.imageViews.removeAtIndex(atIndex)
+          self.imageViews.remove(at: atIndex)
         }
-        self.imageViews.insert(imageView, atIndex: atIndex)
+      self.imageViews.insert(imageView, at: atIndex)
     }
-    
-    
-    
 }

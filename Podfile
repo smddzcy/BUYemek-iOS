@@ -7,9 +7,12 @@ target 'BUYemek' do
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
+inhibit_all_warnings!
 
-pod 'Alamofire', '~> 3.3'
-pod 'Kingfisher', '~> 2.3'
+	pod 'Alamofire', '~> 4.4'
+	pod 'Kingfisher', '~> 3.0'
+	pod 'ActionSheetPicker-3.0'
+	pod 'MBProgressHUD', '~> 1.0.0'
 
 end
 
