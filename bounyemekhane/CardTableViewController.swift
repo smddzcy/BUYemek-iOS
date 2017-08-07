@@ -143,7 +143,7 @@ class CardTableViewController: UIViewController {
     // add a loading indicator
     let loadingIndicator = addActivityIndicator(view: _tableView)
     
-    Alamofire.request("\(Constants.apiURL)/cafeteria/menu/\(date)")
+    Alamofire.request(Constants.Paths.Menu(date: date))
       .validate()
       .responseJSON { response in
         if response.result.isFailure {
@@ -153,7 +153,7 @@ class CardTableViewController: UIViewController {
         }else{
           let foodList: NSDictionary = response.result.value as! NSDictionary
           
-          Alamofire.request("\(Constants.apiURL)/cafeteria/calories/\(date)")
+          Alamofire.request(Constants.Paths.Calories(date: date))
             .validate()
             .responseJSON {response2 in
               
@@ -202,7 +202,7 @@ class CardTableViewController: UIViewController {
    */
   func getFoodImages(date: String){
     // get all images for the day
-    Alamofire.request("\(Constants.apiURL)/cafeteria/images/\(date)")
+    Alamofire.request(Constants.Paths.Images(date: date))
       .validate()
       .responseJSON { response in
         if response.result.value != nil{
