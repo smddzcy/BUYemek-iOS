@@ -61,25 +61,6 @@ class CardTableViewController: UIViewController {
   }
   
   /**
-   Adds an activity indicator to given view
-   
-   - parameter view: UIView object to add the indicator
-   
-   - returns: Indicator which is added to the view
-   */
-  func addActivityIndicator(view: UIView) -> UIActivityIndicatorView{
-    let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50 ))
-    loadingIndicator.center = view.center
-    loadingIndicator.transform = CGAffineTransform(scaleX: 2, y: 2);
-    loadingIndicator.center = self.view.center;
-    loadingIndicator.hidesWhenStopped = true
-    loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-    view.addSubview(loadingIndicator)
-    loadingIndicator.startAnimating();
-    return loadingIndicator
-  }
-  
-  /**
    Gets image for the meal, loads it asynchronously and puts it as a UIIMageView in given meal's imageViews array
    
    - parameter meal: Meal to handle the image
@@ -112,17 +93,6 @@ class CardTableViewController: UIViewController {
     }
   }
   
-  /**
-   Pops up an alert with given title and string
-   
-   - parameter title: Title for the alert
-   - parameter msg:   Message for the alert
-   */
-  func popUpAlert(title: String, msg: String){
-    let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
-    alert.addAction(UIAlertAction(title: "Tamam", style: UIAlertActionStyle.default, handler: nil))
-    self.present(alert, animated: true, completion: nil)
-  }
   
   /**
    Gets food list from local storage or server (if local storage fails)
@@ -140,16 +110,14 @@ class CardTableViewController: UIViewController {
     dinnerFoods = []
     self._tableView.reloadData()
     
-    // add a loading indicator
-    let loadingIndicator = addActivityIndicator(view: _tableView)
+    self.showHUD("Yükleniyor")
     
     Alamofire.request(Constants.Paths.Menu(date: date))
       .validate()
       .responseJSON { response in
         if response.result.isFailure {
-          loadingIndicator.stopAnimating()
-          loadingIndicator.removeFromSuperview()
-          self.popUpAlert(title: "Hata", msg: "Sunucuyla bağlantı kurulamadı.")
+          self.hideHUD()
+          self.showAlert(title: "Hata", message: "Sunucuyla bağlantı kurulamadı.", completion: {})
         }else{
           let foodList: NSDictionary = response.result.value as! NSDictionary
           
@@ -177,15 +145,13 @@ class CardTableViewController: UIViewController {
                     self.saveMealToLocalStorage(meal: meal)
                     self.dinnerFoods.append(meal)
                   }
-                }else{
-                  self.popUpAlert(title: "Üzgünüz", msg: "Seçilen gün için yemek servisi bulunmamaktadır.")
+                } else {
+                  self.showAlert(title: "Üzgünüz", message: "Seçilen gün için yemek servisi bulunmamaktadır.", completion: {})
                 }
                 
                 // remove the indicator
-                loadingIndicator.stopAnimating()
-                loadingIndicator.removeFromSuperview()
+                self.hideHUD()
                 self._tableView.reloadData()
-                
                 self.getFoodImages(date: date)
               }
           }

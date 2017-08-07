@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F4C72BB1F38925D006F36F3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C72BA1F38925D006F36F3 /* UIColorExtension.swift */; };
 		4F4C72BD1F38B2B7006F36F3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C72BC1F38B2B7006F36F3 /* DateExtension.swift */; };
+		4F4C72C61F38E18C006F36F3 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C72C51F38E18C006F36F3 /* UIViewControllerExtension.swift */; };
 		8D0AB8C31CCD785C00659565 /* MealModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AB8C11CCD785C00659565 /* MealModel.xcdatamodeld */; };
 		8D1129DE1CCAF7B500A94B27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1129DD1CCAF7B500A94B27 /* Constants.swift */; };
 		8D41D3E41CB7DC6D007996C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41D3E31CB7DC6D007996C7 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 		39B16E3DC7C35102C3EBE4D2 /* Pods-BUYemek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUYemek.release.xcconfig"; path = "Pods/Target Support Files/Pods-BUYemek/Pods-BUYemek.release.xcconfig"; sourceTree = "<group>"; };
 		4F4C72BA1F38925D006F36F3 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		4F4C72BC1F38B2B7006F36F3 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		4F4C72C51F38E18C006F36F3 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		859A277AC2FB64EA55C145FA /* Pods_bounyemekhane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bounyemekhane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D02F1B21CC8403700D81824 /* FoodDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewController.swift; sourceTree = "<group>"; };
 		8D0AB8C21CCD785C00659565 /* MealModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealModel.xcdatamodel; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				4F4C72BA1F38925D006F36F3 /* UIColorExtension.swift */,
 				4F4C72BC1F38B2B7006F36F3 /* DateExtension.swift */,
+				4F4C72C51F38E18C006F36F3 /* UIViewControllerExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			files = (
 				8DDAFE8E1CC58E4B00197E94 /* Meal.swift in Sources */,
 				8D1129DE1CCAF7B500A94B27 /* Constants.swift in Sources */,
+				4F4C72C61F38E18C006F36F3 /* UIViewControllerExtension.swift in Sources */,
 				8D0AB8C31CCD785C00659565 /* MealModel.xcdatamodeld in Sources */,
 				4F4C72BB1F38925D006F36F3 /* UIColorExtension.swift in Sources */,
 				4F4C72BD1F38B2B7006F36F3 /* DateExtension.swift in Sources */,
