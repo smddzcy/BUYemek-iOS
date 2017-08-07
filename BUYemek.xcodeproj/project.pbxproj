@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F4C72BB1F38925D006F36F3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C72BA1F38925D006F36F3 /* UIColorExtension.swift */; };
 		8D0AB8C31CCD785C00659565 /* MealModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AB8C11CCD785C00659565 /* MealModel.xcdatamodeld */; };
 		8D1129DE1CCAF7B500A94B27 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1129DD1CCAF7B500A94B27 /* AppConstants.swift */; };
 		8D41D3E41CB7DC6D007996C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D41D3E31CB7DC6D007996C7 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		05EE5B90000517777BD24DC8 /* Pods-BUYemek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUYemek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BUYemek/Pods-BUYemek.debug.xcconfig"; sourceTree = "<group>"; };
 		39B16E3DC7C35102C3EBE4D2 /* Pods-BUYemek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUYemek.release.xcconfig"; path = "Pods/Target Support Files/Pods-BUYemek/Pods-BUYemek.release.xcconfig"; sourceTree = "<group>"; };
+		4F4C72BA1F38925D006F36F3 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		859A277AC2FB64EA55C145FA /* Pods_bounyemekhane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bounyemekhane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D02F1B21CC8403700D81824 /* FoodDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewController.swift; sourceTree = "<group>"; };
 		8D0AB8C21CCD785C00659565 /* MealModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealModel.xcdatamodel; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				8D41D3E31CB7DC6D007996C7 /* AppDelegate.swift */,
 				8DDAFE891CC5668100197E94 /* CardTableViewController.swift */,
 				8DDAFE8B1CC568BA00197E94 /* CardTableViewCell.swift */,
+				4F4C72BA1F38925D006F36F3 /* UIColorExtension.swift */,
 				8D1129DD1CCAF7B500A94B27 /* AppConstants.swift */,
 				8D0AB8C11CCD785C00659565 /* MealModel.xcdatamodeld */,
 				8DDC6FF31CC69E78005B1C24 /* TableSectionHeader.swift */,
@@ -274,6 +277,7 @@
 				8DDAFE8E1CC58E4B00197E94 /* Meal.swift in Sources */,
 				8D1129DE1CCAF7B500A94B27 /* AppConstants.swift in Sources */,
 				8D0AB8C31CCD785C00659565 /* MealModel.xcdatamodeld in Sources */,
+				4F4C72BB1F38925D006F36F3 /* UIColorExtension.swift in Sources */,
 				8D41D3E41CB7DC6D007996C7 /* AppDelegate.swift in Sources */,
 				8DDAFE8C1CC568BA00197E94 /* CardTableViewCell.swift in Sources */,
 				8DDC6FF41CC69E78005B1C24 /* TableSectionHeader.swift in Sources */,

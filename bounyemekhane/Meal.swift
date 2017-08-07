@@ -70,7 +70,4 @@ class Meal{
         }
       self.imageViews.insert(imageView, at: atIndex)
     }
-    
-    
-    
 }

@@ -11,5 +11,4 @@ import UIKit
 class TableSectionHeader: UITableViewHeaderFooterView {
     
     @IBOutlet weak var titleLabel: UILabel!
-    
 }
