@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Alamofire
 import Kingfisher
+import ActionSheetPicker_3_0
 
 class CardTableViewController: UIViewController {
   
@@ -37,45 +38,24 @@ class CardTableViewController: UIViewController {
    - parameter sender: "Select the date" button in the navigation bar
    */
   @IBAction func selectDatePressed(sender: UIButton) -> Void {
-    if(pickerOpened == false){
-      pickerOpened = true
-      _tableView.isScrollEnabled = false
-      
-      datePickerContainer.frame = CGRect(x: 0.0, y: sender.frame.height+15, width: self.view.frame.width, height: self.view.frame.height)
-      datePickerContainer.backgroundColor = UIColor.white
-      datePickerContainer.addSubview(datePicker)
-      
-      UIView.transition(with: self.view, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromRight, animations: {self.view.addSubview(self.datePickerContainer)}, completion: nil)
-    }else{
-      dismissPicker()
-    }
+    let datePicker = ActionSheetDatePicker(title: "Tarih:", datePickerMode: .date, selectedDate: Date(),
+        doneBlock: { picker, value, index in
+          self.date = self.dateFormatter.string(from: value as! Date)
+          self.dateField.text = self.date
+          self.getFoodList(date: self.date)
+          return
+        }, cancel: { ActionStringCancelBlock in return }, origin: sender.superview!.superview)
+    datePicker?.minimumDate = self.dateFormatter.date(from: "2016/04/01") // started storing data on April 1st
+    datePicker?.maximumDate = Date().lastDayOfMonth()
+    datePicker?.show()
   }
   
-  /**
-   Dismisses the datepicker screen and gets back into the food list screen
-   */
-  func dismissPicker() -> Void {
-    UIView.transition(with: self.view, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {self.datePickerContainer.removeFromSuperview()}, completion: nil)
-    pickerOpened = false
-    _tableView.isScrollEnabled = true
-    dateField.text = date
-    getFoodList(date: date)
-  }
   
-  /**
-   Handles date field text & `date` property when user changes the date from datepicker
-   
-   - parameter sender: UIDatePicker in the "select a date" part of the program
-   */
-  func dateChanged(sender:UIDatePicker) -> Void{
-    date = dateFormatter.string(from: sender.date)
-    dateField.text = date
-  }
   
   /**
    Initializes the date field text & `date` property
    */
-  func initializeDate() -> Void{
+  func initializeDate() {
     date = dateFormatter.string(from: Date())
     dateField.text = date
   }
@@ -359,36 +339,6 @@ class CardTableViewController: UIViewController {
     nav?.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
     nav?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
     nav?.shadowImage = UIColor.white.toImage()
-    
-    
-    // get start of month
-    let calendar = Calendar.current
-    let components = calendar.dateComponents([.year, .month], from: Date())
-    let startOfMonth: Date = calendar.date(from: components)!
-    // get end of month
-    var comps2 = DateComponents()
-    comps2.month = 1
-    comps2.day = -1
-    let endOfMonth: Date = calendar.date(byAdding: comps2, to: startOfMonth, wrappingComponents: true)!
-    
-    // instantiate datepicker frame
-    datePicker.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300)
-    
-    datePicker.minimumDate = dateFormatter.date(from: "2016/04/01") // started storing data on April 1st
-    datePicker.maximumDate = endOfMonth as Date
-    datePicker.setDate(NSDate() as Date, animated: true)
-    datePicker.datePickerMode = UIDatePickerMode.date
-    datePicker.addTarget(self, action: #selector(CardTableViewController.dateChanged), for: UIControlEvents.valueChanged)
-    
-    // put a done button into the datepicker frame
-    let doneButton = UIButton()
-    doneButton.setTitle("Tamam", for: .normal)
-    doneButton.setTitleColor(AppConstants.mainBlueColor, for: .normal)
-    doneButton.addTarget(self, action: #selector(CardTableViewController.dismissPicker), for: .touchUpInside)
-    doneButton.frame    = CGRect(x: 0, y: 300, width: self.view.frame.width, height: self.view.frame.height-408) // extra 108 pixels from navigation + status bar
-    datePickerContainer.addSubview(doneButton)
-    
-    
   }
 }
 
@@ -402,14 +352,14 @@ extension CardTableViewController: UITableViewDelegate, UITableViewDataSource {
    - returns: Title of the section, or nil if section is not valid
    */
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    
-    if section == 0{
+    switch section {
+    case 0:
       return AppConstants.lunchHeaderText
-    }else if section == 1{
-      return AppConstants.dinnerHeaderText
+    case 1:
+      return AppConstants.lunchHeaderText
+    default:
+      return nil
     }
-    
-    return nil
   }
 
   /**
@@ -440,9 +390,9 @@ extension CardTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     var meal:Meal
     
-    if indexPath.section == 0{
+    if indexPath.section == 0 {
       meal = lunchFoods[indexPath.row]
-    }else{
+    } else {
       meal = dinnerFoods[indexPath.row]
     }
     
@@ -459,15 +409,14 @@ extension CardTableViewController: UITableViewDelegate, UITableViewDataSource {
     let perImageWidth: CGFloat = cell._imageView.frame.width / CGFloat(imageCount);
     var j: CGFloat = 0
     
-    for imgView in meal.getImageViews(){
-      imgView.frame = CGRect(x: j*perImageWidth, y: 0, width: perImageWidth, height: cell._imageView.frame.height)
+    for imgView in meal.getImageViews() {
+      imgView.frame = CGRect(x: j * perImageWidth, y: 0, width: perImageWidth, height: cell._imageView.frame.height)
       imgView.clipsToBounds = true
       imgView.contentMode = .scaleAspectFill
       cell._imageView.addSubview(imgView)
       cell.setNeedsLayout()
       j+=1
     }
-    
     return cell
   }
   

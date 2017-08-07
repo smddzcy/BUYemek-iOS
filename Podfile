@@ -10,6 +10,7 @@ use_frameworks!
 
 pod 'Alamofire', '~> 4.4'
 pod 'Kingfisher', '~> 3.0'
+pod 'ActionSheetPicker-3.0'
 
 end
 
