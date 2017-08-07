@@ -66,9 +66,9 @@ class Meal{
     
     func setImageView(imageView: UIImageView, atIndex: Int){
         if atIndex < self.imageViews.endIndex{
-            self.imageViews.removeAtIndex(atIndex)
+          self.imageViews.remove(at: atIndex)
         }
-        self.imageViews.insert(imageView, atIndex: atIndex)
+      self.imageViews.insert(imageView, at: atIndex)
     }
     
     

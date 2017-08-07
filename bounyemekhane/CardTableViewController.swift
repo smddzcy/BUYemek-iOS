@@ -13,13 +13,13 @@ import Kingfisher
 
 extension UIColor{
     func toImage() -> UIImage {
-        let rect = CGRectMake(0, 0, 1, 1)
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContextWithOptions(rect.size, true, 0)
         self.setFill()
         UIRectFill(rect)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+      return image!
     }
 }
 
@@ -31,7 +31,7 @@ class CardTableViewController: UITableViewController{
     @IBOutlet weak var dateField: UILabel!
     @IBOutlet weak var selectDateButton: UIButton!
     
-    private var dateFormatter: NSDateFormatter = NSDateFormatter()
+  private var dateFormatter: DateFormatter = DateFormatter()
     private var date: String = ""
     private var pickerOpened:Bool = false
     private var picker : UIDatePicker = UIDatePicker()
@@ -51,13 +51,13 @@ class CardTableViewController: UITableViewController{
     @IBAction func selectDatePressed(sender: UIButton) -> Void {
         if(pickerOpened == false){
             pickerOpened = true
-            _tableView.scrollEnabled = false
+          _tableView.isScrollEnabled = false
             
-            datePickerContainer.frame = CGRectMake(0.0, sender.frame.height+15, self.view.frame.width, self.view.frame.height)
-            datePickerContainer.backgroundColor = UIColor.whiteColor()
+            datePickerContainer.frame = CGRect(x: 0.0, y: sender.frame.height+15, width: self.view.frame.width, height: self.view.frame.height)
+          datePickerContainer.backgroundColor = UIColor.white
             datePickerContainer.addSubview(datePicker)
             
-            UIView.transitionWithView(self.view, duration: 0.5, options: UIViewAnimationOptions.TransitionFlipFromRight, animations: {self.view.addSubview(self.datePickerContainer)}, completion: nil)
+          UIView.transition(with: self.view, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromRight, animations: {self.view.addSubview(self.datePickerContainer)}, completion: nil)
         }else{
             dismissPicker()
         }
@@ -67,11 +67,11 @@ class CardTableViewController: UITableViewController{
      Dismisses the datepicker screen and gets back into the food list screen
      */
     func dismissPicker() -> Void {
-        UIView.transitionWithView(self.view, duration: 0.5, options: UIViewAnimationOptions.TransitionFlipFromLeft, animations: {self.datePickerContainer.removeFromSuperview()}, completion: nil)
+      UIView.transition(with: self.view, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {self.datePickerContainer.removeFromSuperview()}, completion: nil)
         pickerOpened = false
-        _tableView.scrollEnabled = true
+      _tableView.isScrollEnabled = true
         dateField.text = date
-        getFoodList(date)
+      getFoodList(date: date)
     }
     
     /**
@@ -80,7 +80,7 @@ class CardTableViewController: UITableViewController{
      - parameter sender: UIDatePicker in the "select a date" part of the program
      */
     func dateChanged(sender:UIDatePicker) -> Void{
-        date = dateFormatter.stringFromDate(sender.date)
+      date = dateFormatter.string(from: sender.date)
         dateField.text = date
     }
     
@@ -88,7 +88,7 @@ class CardTableViewController: UITableViewController{
      Initializes the date field text & `date` property
      */
     func initializeDate() -> Void{
-        date = dateFormatter.stringFromDate(NSDate())
+      date = dateFormatter.string(from: Date())
         dateField.text = date
     }
     
@@ -101,7 +101,7 @@ class CardTableViewController: UITableViewController{
      */
     func parseJSON(inputData: NSData) -> NSDictionary{
         do{
-            let boardsDictionary: NSDictionary = try NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+          let boardsDictionary: NSDictionary = try JSONSerialization.jsonObject(with: inputData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
             return boardsDictionary
         }catch{ }
         return NSDictionary()
@@ -115,12 +115,12 @@ class CardTableViewController: UITableViewController{
      - returns: Indicator which is added to the view
      */
     func addActivityIndicator(view: UIView) -> UIActivityIndicatorView{
-        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0 , 50, 50))
+        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50 ))
         loadingIndicator.center = view.center
-        loadingIndicator.transform = CGAffineTransformMakeScale(2, 2);
+      loadingIndicator.transform = CGAffineTransform(scaleX: 2, y: 2);
         loadingIndicator.center = self.view.center;
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+      loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(loadingIndicator)
         loadingIndicator.startAnimating();
         return loadingIndicator
@@ -133,12 +133,12 @@ class CardTableViewController: UITableViewController{
      */
     func handleImageForFood(meal: Meal){
         // initialize the "no image" image view
-        meal.setImageView(UIImageView(image: UIImage(named: "noImage")), atIndex: 0)
+      meal.setImageView(imageView: UIImageView(image: UIImage(named: "noImage")), atIndex: 0)
         
         // if not nil, then its a multiple food line
-        var imageURL = self.imagePaths.valueForKey(meal.getName()) as? NSArray
-        if imageURL == nil && self.imagePaths.valueForKey(meal.getName()) != nil{ // single url
-            imageURL = [String(self.imagePaths.valueForKey(meal.getName())!)]
+      var imageURL = self.imagePaths.value(forKey: meal.getName()) as? NSArray
+      if imageURL == nil && self.imagePaths.value(forKey: meal.getName()) != nil{ // single url
+        imageURL = [String(describing: self.imagePaths.value(forKey: meal.getName())!)]
         }
         
         // set images & download them asynchronously
@@ -147,13 +147,10 @@ class CardTableViewController: UITableViewController{
             for url in imageURL! {
                 let imagePart = UIImageView()
                 imagePart.image = UIImage(named: "noImage")
-                meal.setImageView(imagePart, atIndex: j)
+              meal.setImageView(imageView: imagePart, atIndex: j)
                 if url as? String != nil {
-                    if let urlObj = NSURL(string: url as! String){
-                        imagePart.kf_setImageWithURL(urlObj,
-                                                     completionHandler: { (image, error, cacheType, imgURL) -> () in
-                                                        // nothing on completion
-                        })
+                    if let urlObj = URL(string: url as! String){
+                        imagePart.kf.setImage(with: urlObj)
                     }
                 }
                 j+=1
@@ -169,9 +166,9 @@ class CardTableViewController: UITableViewController{
      - parameter msg:   Message for the alert
      */
     func popUpAlert(title: String, msg: String){
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Tamam", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+      let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
+      alert.addAction(UIAlertAction(title: "Tamam", style: UIAlertActionStyle.default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
     }
     
     /**
@@ -182,53 +179,53 @@ class CardTableViewController: UITableViewController{
     func getFoodList(date: String){
         
         // no need to get the food list from server if it already exists on local storage
-        if getMealsFromLocalStorage(date) {
+      if getMealsFromLocalStorage(date: date) {
             return
-        }
+      }
         
         lunchFoods = []
         dinnerFoods = []
         self._tableView.reloadData()
         
         // add a loading indicator
-        let loadingIndicator = addActivityIndicator(_tableView)
+      let loadingIndicator = addActivityIndicator(view: _tableView)
         
-        Alamofire.request(.GET, "\(AppConstants.apiURL)/cafeteria/menu/\(date)")
+        Alamofire.request("\(AppConstants.apiURL)/cafeteria/menu/\(date)")
             .validate()
             .responseJSON { response in
                 if response.result.isFailure {
                     loadingIndicator.stopAnimating()
                     loadingIndicator.removeFromSuperview()
-                    self.popUpAlert("Hata", msg: "Sunucuyla bağlantı kurulamadı.")
+                    self.popUpAlert(title: "Hata", msg: "Sunucuyla bağlantı kurulamadı.")
                 }else{
                     let foodList: NSDictionary = response.result.value as! NSDictionary
                     
-                    Alamofire.request(.GET, "\(AppConstants.apiURL)/cafeteria/calories/\(date)")
+                    Alamofire.request("\(AppConstants.apiURL)/cafeteria/calories/\(date)")
                         .validate()
                         .responseJSON {response2 in
                             
                             let calorieList: NSDictionary = response2.result.value as! NSDictionary
-                            if let lunch = foodList.valueForKey("lunch") as? [String] {
-                                let dinner = foodList.valueForKey("dinner") as? [String]
+                            if let lunch = foodList.value(forKey: "lunch") as? [String] {
+                                let dinner = foodList.value(forKey: "dinner") as? [String]
                                 if lunch.count > 0 && dinner != nil && dinner!.count > 0{
                                     for i in lunch{
                                         let meal: Meal = Meal(name: i, meal: "L", date: date)
-                                        if let calorie = calorieList.valueForKey(i) {
-                                            meal.setCalorie("\(calorie)")
+                                        if let calorie = calorieList.value(forKey: i) {
+                                            meal.setCalorie(calorie: "\(calorie)")
                                         }
-                                        self.saveMealToLocalStorage(meal)
+                                        self.saveMealToLocalStorage(meal: meal)
                                         self.lunchFoods.append(meal)
                                     }
                                     for i in dinner!{
                                         let meal: Meal = Meal(name: i, meal: "D", date: date)
-                                        if let calorie = calorieList.valueForKey(i) {
-                                            meal.setCalorie("\(calorie)")
+                                        if let calorie = calorieList.value(forKey: i) {
+                                            meal.setCalorie(calorie: "\(calorie)")
                                         }
-                                        self.saveMealToLocalStorage(meal)
+                                        self.saveMealToLocalStorage(meal: meal)
                                         self.dinnerFoods.append(meal)
                                     }
                                 }else{
-                                    self.popUpAlert("Üzgünüz", msg: "Seçilen gün için yemek servisi bulunmamaktadır.")
+                                    self.popUpAlert(title: "Üzgünüz", msg: "Seçilen gün için yemek servisi bulunmamaktadır.")
                                 }
                                 
                                 // remove the indicator
@@ -236,7 +233,7 @@ class CardTableViewController: UITableViewController{
                                 loadingIndicator.removeFromSuperview()
                                 self._tableView.reloadData()
                                 
-                                self.getFoodImages(date)
+                                self.getFoodImages(date: date)
                             }
                     }
                 }
@@ -252,14 +249,14 @@ class CardTableViewController: UITableViewController{
      */
     func getFoodImages(date: String){
         // get all images for the day
-        Alamofire.request(.GET, "\(AppConstants.apiURL)/cafeteria/images/\(date)")
+        Alamofire.request("\(AppConstants.apiURL)/cafeteria/images/\(date)")
             .validate()
             .responseJSON { response in
                 if response.result.value != nil{
                     self.imagePaths = response.result.value as! NSDictionary
                 }
                 for meal in self.lunchFoods+self.dinnerFoods{
-                    self.handleImageForFood(meal)
+                    self.handleImageForFood(meal: meal)
                 }
                 self._tableView.reloadData()
         }
@@ -269,13 +266,13 @@ class CardTableViewController: UITableViewController{
      Fetchs local storage and puts them into `cachedMeals`
      */
     func fetchLocalStorage(){
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+      let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
-        let fetchRequest = NSFetchRequest(entityName: "Meal")
+      let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Meal")
         
         do {
-            let results = try managedContext.executeFetchRequest(fetchRequest)
+          let results = try managedContext.fetch(fetchRequest)
             cachedMeals = results as! [NSManagedObject]
         } catch { }
     }
@@ -298,14 +295,14 @@ class CardTableViewController: UITableViewController{
         
         var mealsInLocalStorage: Bool = false
         for meal in cachedMeals{
-            if let mealDate = meal.valueForKey("date") as? String{
+          if let mealDate = meal.value(forKey: "date") as? String{
                 if mealDate == date{
-                    if meal.valueForKey("meal") as! String == "L" {
-                        let _meal = Meal(name: meal.valueForKey("name") as! String, meal: "L", date: meal.valueForKey("date") as! String, calorie: meal.valueForKey("calorie") as! String)
+                  if meal.value(forKey: "meal") as! String == "L" {
+                    let _meal = Meal(name: meal.value(forKey: "name") as! String, meal: "L", date: meal.value(forKey: "date") as! String, calorie: meal.value(forKey: "calorie") as! String)
                         lunchFoods.append(_meal)
                         mealsInLocalStorage = true
-                    } else if meal.valueForKey("meal") as! String == "D"{
-                        let _meal = Meal(name: meal.valueForKey("name") as! String, meal: "D", date: meal.valueForKey("date") as! String, calorie: meal.valueForKey("calorie") as! String)
+                  } else if meal.value(forKey: "meal") as! String == "D"{
+                    let _meal = Meal(name: meal.value(forKey: "name") as! String, meal: "D", date: meal.value(forKey: "date") as! String, calorie: meal.value(forKey: "calorie") as! String)
                         dinnerFoods.append(_meal)
                         mealsInLocalStorage = true
                     } else{
@@ -317,7 +314,7 @@ class CardTableViewController: UITableViewController{
         _tableView.reloadData()
         
         if mealsInLocalStorage{
-            getFoodImages(date)
+          getFoodImages(date: date)
         }
         
         return mealsInLocalStorage
@@ -329,13 +326,13 @@ class CardTableViewController: UITableViewController{
      - parameter meal: Meal to save
      */
     func saveMealToLocalStorage(meal: Meal){
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+      let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
-        let entity =  NSEntityDescription.entityForName("Meal",
-                                                        inManagedObjectContext:managedContext)
+        let entity =  NSEntityDescription.entity(forEntityName: "Meal",
+                                                        in:managedContext)
         let mealObject = NSManagedObject(entity: entity!,
-                                         insertIntoManagedObjectContext: managedContext)
+                                         insertInto: managedContext)
         
         mealObject.setValue(meal.getName(), forKey: "name")
         mealObject.setValue(meal.getMeal(), forKey: "meal")
@@ -356,50 +353,51 @@ class CardTableViewController: UITableViewController{
         
         dateFormatter.dateFormat = "YYYY/MM/dd"
         initializeDate()
-        getFoodList(date)
+      getFoodList(date: date)
         
-        self._tableView.separatorColor = UIColor.clearColor() // delete cell separators
+      self._tableView.separatorColor = UIColor.clear // delete cell separators
         
         // Add white borders to datepicker button
         selectDateButton.layer.cornerRadius = 5
         selectDateButton.layer.borderWidth = 1
-        selectDateButton.layer.borderColor = UIColor.whiteColor().CGColor
-        selectDateButton.setTitleColor(AppConstants.mainBlueColor, forState: .Highlighted)
+      selectDateButton.layer.borderColor = UIColor.white.cgColor
+      selectDateButton.setTitleColor(AppConstants.mainBlueColor, for: .highlighted)
         
         // Set background&text colors of navbar
         let nav = self.navigationController?.navigationBar
-        nav?.translucent = false
+      nav?.isTranslucent = false
         nav?.barTintColor = AppConstants.mainBlueColor // actual color is same as select date button highlight color
-        nav?.tintColor = UIColor.whiteColor()
-        nav?.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-        nav?.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        nav?.shadowImage = UIColor.whiteColor().toImage()
+      nav?.tintColor = UIColor.white
+        nav?.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+      nav?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        nav?.shadowImage = UIColor.white.toImage()
         
         
         // get start of month
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Year, .Month], fromDate: NSDate())
-        let startOfMonth: NSDate = calendar.dateFromComponents(components)!
+        let calendar = Calendar.current
+      let components = calendar.dateComponents([.year, .month], from: Date())
+        let startOfMonth: Date = calendar.date(from: components)!
         // get end of month
-        let comps2 = NSDateComponents()
+        var comps2 = DateComponents()
         comps2.month = 1
         comps2.day = -1
-        let endOfMonth: NSDate = calendar.dateByAddingComponents(comps2, toDate: startOfMonth, options: [])!
-        
+        let endOfMonth: Date = calendar.date(byAdding: comps2, to: startOfMonth, wrappingComponents: true)!
+      
         // instantiate datepicker frame
-        datePicker.frame = CGRectMake(0.0, 0, self.view.frame.width, 300)
-        datePicker.minimumDate = dateFormatter.dateFromString("2016/04/01") // started storing data on April 1st
-        datePicker.maximumDate = endOfMonth
-        datePicker.setDate(NSDate(), animated: true)
-        datePicker.datePickerMode = UIDatePickerMode.Date
-        datePicker.addTarget(self, action: #selector(CardTableViewController.dateChanged), forControlEvents: UIControlEvents.ValueChanged)
+        datePicker.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300)
+          
+        datePicker.minimumDate = dateFormatter.date(from: "2016/04/01") // started storing data on April 1st
+        datePicker.maximumDate = endOfMonth as Date
+        datePicker.setDate(NSDate() as Date, animated: true)
+        datePicker.datePickerMode = UIDatePickerMode.date
+        datePicker.addTarget(self, action: #selector(CardTableViewController.dateChanged), for: UIControlEvents.valueChanged)
         
         // put a done button into the datepicker frame
         let doneButton = UIButton()
-        doneButton.setTitle("Tamam", forState: UIControlState.Normal)
-        doneButton.setTitleColor(AppConstants.mainBlueColor, forState: UIControlState.Normal)
-        doneButton.addTarget(self, action: #selector(CardTableViewController.dismissPicker), forControlEvents: UIControlEvents.TouchUpInside)
-        doneButton.frame    = CGRectMake(0, 300, self.view.frame.width, self.view.frame.height-408) // extra 108 pixels from navigation + status bar
+        doneButton.setTitle("Tamam", for: .normal)
+        doneButton.setTitleColor(AppConstants.mainBlueColor, for: .normal)
+        doneButton.addTarget(self, action: #selector(CardTableViewController.dismissPicker), for: .touchUpInside)
+        doneButton.frame    = CGRect(x: 0, y: 300, width: self.view.frame.width, height: self.view.frame.height-408) // extra 108 pixels from navigation + status bar
         datePickerContainer.addSubview(doneButton)
         
         
@@ -412,7 +410,7 @@ class CardTableViewController: UITableViewController{
      
      - returns: Number of sections, 2 for this app. One for lunch foods, one for dinner foods.
      */
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
     
@@ -424,7 +422,7 @@ class CardTableViewController: UITableViewController{
      
      - returns: Number of rows
      */
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return lunchFoods.count
         }else{
@@ -440,9 +438,9 @@ class CardTableViewController: UITableViewController{
      
      - returns: UITableViewCell for the given index
      */
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("card", forIndexPath: indexPath) as! CardTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "card", for: indexPath as IndexPath) as! CardTableViewCell
         
         var meal:Meal
         
@@ -466,9 +464,9 @@ class CardTableViewController: UITableViewController{
         var j: CGFloat = 0
         
         for imgView in meal.getImageViews(){
-            imgView.frame = CGRectMake(j*perImageWidth,0,perImageWidth, cell._imageView.frame.height)
+            imgView.frame = CGRect(x: j*perImageWidth, y: 0, width: perImageWidth, height: cell._imageView.frame.height)
             imgView.clipsToBounds = true
-            imgView.contentMode = .ScaleAspectFill
+            imgView.contentMode = .scaleAspectFill
             cell._imageView.addSubview(imgView)
             cell.setNeedsLayout()
             j+=1
@@ -486,7 +484,7 @@ class CardTableViewController: UITableViewController{
      
      - returns: Title of the section, or nil if section is not valid
      */
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         if section == 0{
             return AppConstants.lunchHeaderText
@@ -504,10 +502,10 @@ class CardTableViewController: UITableViewController{
      - parameter view:      View for section header
      - parameter section:   Section number
      */
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
         header.contentView.backgroundColor = AppConstants.mainBlueColor
-        header.textLabel!.textColor = UIColor.whiteColor()
+        header.textLabel!.textColor = UIColor.white
         header.textLabel?.font = UIFont.init(name: "Montserrat-Light", size: 17)
     }
     
@@ -519,19 +517,19 @@ class CardTableViewController: UITableViewController{
      - returns: UIColor object with given HEX code color
      */
     func colorWithHexString (hex:String) -> UIColor {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
-        
+        var cString = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+      
         if cString.hasPrefix("#"){
-            cString = (cString as NSString).substringFromIndex(1)
+            cString = (cString as NSString).substring(from: 1)
         }
         
         if cString.characters.count != 6 {
-            return UIColor.grayColor()
+            return UIColor.gray
         }
         
         var rgbValue :UInt32 = 0
         
-        NSScanner(string: cString).scanHexInt(&rgbValue)
+        Scanner(string: cString).scanHexInt32(&rgbValue)
         
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
