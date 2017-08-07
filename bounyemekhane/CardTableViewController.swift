@@ -19,7 +19,7 @@ class CardTableViewController: UIViewController {
   @IBOutlet weak var dateField: UILabel!
   
   // MARK: - Properties
-  private var date:Date = Date()
+  var date:Date = Date()
   var cachedMeals = [NSManagedObject]()
   var lunchFoods: [Meal] = []
   var dinnerFoods: [Meal] = []
@@ -32,10 +32,6 @@ class CardTableViewController: UIViewController {
     
     dateField.text = self.date.toLabel()
     getFoodList(date: self.date.toString())
-  }
-  
-  override var preferredStatusBarStyle: UIStatusBarStyle {
-    return .lightContent
   }
 
   // MARK: - IBActions
@@ -303,7 +299,7 @@ extension CardTableViewController: UITableViewDelegate, UITableViewDataSource {
    - parameter section:   Section number
    */
   func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-    let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
+    let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
     header.contentView.backgroundColor = UIColor.primaryColor()
     header.textLabel!.textColor = UIColor.white
     header.textLabel?.font = UIFont.init(name: "Montserrat-Light", size: 17)
@@ -340,15 +336,13 @@ extension CardTableViewController: UITableViewDelegate, UITableViewDataSource {
     // add images
     let imageCount: Int = meal.getImageViews().count
     let perImageWidth: CGFloat = cell._imageView.frame.width / CGFloat(imageCount);
-    var j: CGFloat = 0
     
-    for imgView in meal.getImageViews() {
-      imgView.frame = CGRect(x: j * perImageWidth, y: 0, width: perImageWidth, height: cell._imageView.frame.height)
+    for (j, imgView) in meal.getImageViews().enumerated() {
+      imgView.frame = CGRect(x: CGFloat(j) * perImageWidth, y: 0, width: perImageWidth, height: cell._imageView.frame.height)
       imgView.clipsToBounds = true
       imgView.contentMode = .scaleAspectFill
       cell._imageView.addSubview(imgView)
       cell.setNeedsLayout()
-      j+=1
     }
     return cell
   }
