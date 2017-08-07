@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     navigationBarAppearace.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
     navigationBarAppearace.shadowImage = UIColor.white.toImage()
 
+    UIApplication.shared.statusBarStyle = .lightContent
+
     return true
   }
   

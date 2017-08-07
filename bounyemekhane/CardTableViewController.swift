@@ -17,7 +17,6 @@ class CardTableViewController: UIViewController {
   // MARK: - IBOutlets
   @IBOutlet var _tableView: UITableView!
   @IBOutlet weak var dateField: UILabel!
-  @IBOutlet weak var selectDateButton: UIButton!
   
   // MARK: - Properties
   private var date:Date = Date()
@@ -33,20 +32,13 @@ class CardTableViewController: UIViewController {
     
     dateField.text = self.date.toLabel()
     getFoodList(date: self.date.toString())
-    
-    // Add white borders to datepicker button
-    selectDateButton.layer.cornerRadius = 5
-    selectDateButton.layer.borderWidth = 1
-    selectDateButton.layer.borderColor = UIColor.white.cgColor
-    selectDateButton.setTitleColor(UIColor.primaryColor(), for: .highlighted)
   }
   
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+
   // MARK: - IBActions
-  /**
-   Opens up the datepicker screen
-   
-   - parameter sender: "Select the date" button in the navigation bar
-   */
   @IBAction func selectDatePressed(sender: UIButton) -> Void {
     let datePicker = ActionSheetDatePicker(title: "Tarih:", datePickerMode: .date, selectedDate: self.date,
         doneBlock: { picker, value, index in
@@ -55,6 +47,7 @@ class CardTableViewController: UIViewController {
           self.getFoodList(date: self.date.toString())
           return
         }, cancel: { ActionStringCancelBlock in return }, origin: sender.superview!.superview)
+    datePicker?.locale = Locale(identifier: "tr")
     datePicker?.minimumDate = Date(fromString: Constants.firstDaytoSelect) // started storing data on April 1st
     datePicker?.maximumDate = Date().lastDayOfMonth()
     datePicker?.show()
@@ -69,10 +62,10 @@ class CardTableViewController: UIViewController {
    - returns: JSON data (represented as NSDictionary)
    */
   func parseJSON(inputData: NSData) -> NSDictionary{
-    do{
+    do {
       let boardsDictionary: NSDictionary = try JSONSerialization.jsonObject(with: inputData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
       return boardsDictionary
-    }catch{ }
+    } catch { }
     return NSDictionary()
   }
   
@@ -367,7 +360,7 @@ extension CardTableViewController: UITableViewDelegate, UITableViewDataSource {
    
    - returns: Number of sections, 2 for this app. One for lunch foods, one for dinner foods.
    */
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+  func numberOfSections(in tableView: UITableView) -> Int {
     return 2
   }
   
