@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardTableViewCell : UITableViewCell{
+class CardTableViewCell : UITableViewCell {
   
   @IBOutlet weak var _cardView: UIView!
   @IBOutlet weak var _imageView: UIImageView! {
@@ -20,6 +20,5 @@ class CardTableViewCell : UITableViewCell{
     }
   }
   @IBOutlet weak var calorieField: UILabel!
-  @IBOutlet weak var nameField: UILabel!
-  
+  @IBOutlet weak var nameField: UILabel!  
 }

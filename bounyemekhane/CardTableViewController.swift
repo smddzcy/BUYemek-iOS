@@ -315,15 +315,6 @@ class CardTableViewController: UIViewController {
     selectDateButton.layer.borderWidth = 1
     selectDateButton.layer.borderColor = UIColor.white.cgColor
     selectDateButton.setTitleColor(UIColor.primaryColor(), for: .highlighted)
-    
-    // Set background&text colors of navbar
-    let nav = self.navigationController?.navigationBar
-    nav?.isTranslucent = false
-    nav?.barTintColor = UIColor.primaryColor() // actual color is same as select date button highlight color
-    nav?.tintColor = UIColor.white
-    nav?.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-    nav?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-    nav?.shadowImage = UIColor.white.toImage()
   }
 }
 

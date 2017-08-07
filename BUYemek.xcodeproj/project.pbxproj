@@ -81,6 +81,70 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4F4C72BE1F38DE1D006F36F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F4C72BA1F38925D006F36F3 /* UIColorExtension.swift */,
+				4F4C72BC1F38B2B7006F36F3 /* DateExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		4F4C72BF1F38DE50006F36F3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8DDAFE891CC5668100197E94 /* CardTableViewController.swift */,
+				8D02F1B21CC8403700D81824 /* FoodDetailsViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4F4C72C01F38DE60006F36F3 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				8DDC6FF31CC69E78005B1C24 /* TableSectionHeader.swift */,
+				8DDAFE8B1CC568BA00197E94 /* CardTableViewCell.swift */,
+			);
+			name = Subclasses;
+			sourceTree = "<group>";
+		};
+		4F4C72C11F38DE7D006F36F3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8D41D3EF1CB7DC6D007996C7 /* LaunchScreen.storyboard */,
+				8D41D3E71CB7DC6D007996C7 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		4F4C72C21F38DE96006F36F3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8D1129DD1CCAF7B500A94B27 /* Constants.swift */,
+				4F4C72C01F38DE60006F36F3 /* Subclasses */,
+				4F4C72BE1F38DE1D006F36F3 /* Extensions */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		4F4C72C31F38DECD006F36F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D02F1B11CC8380900D81824 /* Fonts */,
+				8D0AB8C11CCD785C00659565 /* MealModel.xcdatamodeld */,
+				8D41D3ED1CB7DC6D007996C7 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4F4C72C41F38DEFE006F36F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8DDAFE8D1CC58E4B00197E94 /* Meal.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		8D02F1B11CC8380900D81824 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,20 +181,12 @@
 		8D41D3E21CB7DC6D007996C7 /* bounyemekhane */ = {
 			isa = PBXGroup;
 			children = (
-				8D02F1B11CC8380900D81824 /* Fonts */,
 				8D41D3E31CB7DC6D007996C7 /* AppDelegate.swift */,
-				8DDAFE891CC5668100197E94 /* CardTableViewController.swift */,
-				8DDAFE8B1CC568BA00197E94 /* CardTableViewCell.swift */,
-				4F4C72BA1F38925D006F36F3 /* UIColorExtension.swift */,
-				4F4C72BC1F38B2B7006F36F3 /* DateExtension.swift */,
-				8D1129DD1CCAF7B500A94B27 /* Constants.swift */,
-				8D0AB8C11CCD785C00659565 /* MealModel.xcdatamodeld */,
-				8DDC6FF31CC69E78005B1C24 /* TableSectionHeader.swift */,
-				8D02F1B21CC8403700D81824 /* FoodDetailsViewController.swift */,
-				8DDAFE8D1CC58E4B00197E94 /* Meal.swift */,
-				8D41D3E71CB7DC6D007996C7 /* Main.storyboard */,
-				8D41D3EF1CB7DC6D007996C7 /* LaunchScreen.storyboard */,
-				8D41D3ED1CB7DC6D007996C7 /* Assets.xcassets */,
+				4F4C72C21F38DE96006F36F3 /* Utility */,
+				4F4C72C41F38DEFE006F36F3 /* Models */,
+				4F4C72BF1F38DE50006F36F3 /* View Controllers */,
+				4F4C72C11F38DE7D006F36F3 /* Storyboards */,
+				4F4C72C31F38DECD006F36F3 /* Resources */,
 				8D41D3F21CB7DC6D007996C7 /* Info.plist */,
 			);
 			path = bounyemekhane;

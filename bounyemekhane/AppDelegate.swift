@@ -15,8 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   
-  private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    NSTimeZone.default = NSTimeZone.init(abbreviation: "Europe/Istanbul")! as TimeZone
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    let navigationBarAppearace = UINavigationBar.appearance()
+    navigationBarAppearace.tintColor = UIColor.white
+    navigationBarAppearace.barTintColor = UIColor.primaryColor()
+    navigationBarAppearace.isTranslucent = false
+    navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+    navigationBarAppearace.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+    navigationBarAppearace.shadowImage = UIColor.white.toImage()
+
     return true
   }
   

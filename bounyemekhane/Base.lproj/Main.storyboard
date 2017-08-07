@@ -39,10 +39,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016/04/19" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcT-oV-HhS">
-                                        <rect key="frame" x="60" y="13" width="120" height="19"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="XyH-eK-KHX"/>
-                                        </constraints>
+                                        <rect key="frame" x="60" y="13" width="171" height="19"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,6 +71,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.46666666670000001" green="0.78039215689999997" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="wbf-lG-Hfh" firstAttribute="leading" secondItem="EcT-oV-HhS" secondAttribute="trailing" constant="16" id="0m4-Rr-iJO"/>
                                     <constraint firstItem="EcT-oV-HhS" firstAttribute="baseline" secondItem="wbf-lG-Hfh" secondAttribute="baseline" id="1i2-UP-gRr"/>
                                     <constraint firstItem="03L-e1-uLk" firstAttribute="baseline" secondItem="EcT-oV-HhS" secondAttribute="baseline" id="1lN-w3-mDt"/>
                                     <constraint firstAttribute="height" constant="44" id="8X6-0P-gTZ"/>
